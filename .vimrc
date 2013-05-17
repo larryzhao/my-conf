@@ -1,0 +1,97 @@
+set nocompatible               " be iMproved
+filetype on                   " required!
+syntax on                      " enable syntax
+"filetype plugin indent on      " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+" original repos on github
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/vim-rails.git'
+Bundle 'desert-warm-256'
+Bundle 'scrooloose/nerdtree'
+Bundle 'larryzhao/my-vim-colors'
+Bundle 'mileszs/ack.vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-surround'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Valloric/YouCompleteMe'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"
+" vim-scripts repos
+"Bundle 'L9'
+Bundle 'ruby.vim'
+Bundle "jQuery"
+Bundle "Markdown"
+"Bundle 'FuzzyFinder'
+
+" non github repos
+" Bundle 'git://git.wincent.com/command-t.git'
+
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
+
+
+" my configs
+colorscheme Tomorrow-Night      " set color theme
+
+let NERDTreeShowHidden=1 " let Nerdtree show hidden files
+
+if has("gui_macvim")
+  set guifont=Monaco:h16
+  set guioptions-=L " Disable Scrollbar in NERDtree with MacVim
+endif
+
+set nowrap                      " disable linkbreaks
+set clipboard-=unnamed          " seperate yanks and clipboard
+set autoread                    " Automatically reread changed files without asking me anything
+set autowrite                   " Writes on make/shell commands
+set timeoutlen=250              " Time to wait after ESC (default causes an annoying delay) 
+set noerrorbells                " No beeps
+set noswapfile                  " Don't use swapfile
+set nobackup            		    " Don't create annoying backup files
+set encoding=utf-8              " Set default encoding to UTF-8
+
+" set tabs & indent
+set tabstop=2
+set expandtab                   " Make tabs into spaces (set by tabstop)
+set shiftwidth=2                " Set the default shift width for indents 
+set smarttab
+set autoindent
+
+set backspace=indent,eol,start  " Makes backspace key more powerful.
+set showmode                    " Show current mode.
+set splitright                  " Split vertical windows right to the current windows
+set splitbelow                  " Split horizontal windows below to the current windows
+set hlsearch                    " Highlight found searches
+
+"set number                     " Show line numbers
+"set showcmd                    " Show me what I'm typing
+"set autowrite                  " Automatically save before :next, :make etc.
+"set laststatus=2               "always show the status line (0 = never, 1 = (default) only if there are two or more windows, 2 = always)
+"set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
+"set showmatch                   " Do not show matching brackets by flickering
+"set incsearch                   " Shows the match while typing
+"set ignorecase                  " Search case insensitive...
+"set smartcase                   " ... but not when search pattern contains upper case characters
+"set switchbuf=usetab,newtab     " open new buffers always in new tabs
+"
+"
+
+"Set filetypes
+au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru}     set ft=ruby
+au BufRead,BufNewFile {*.md,*.mkd,*.markdown}                         set ft=markdown
+au BufNewFile,BufRead *.coffee                                        set filetype=coffee
