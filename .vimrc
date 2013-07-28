@@ -1,7 +1,7 @@
 set nocompatible               " be iMproved
 filetype on                   " required!
 syntax on                      " enable syntax
-"filetype plugin indent on      " required!
+filetype plugin on      " required!
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -23,6 +23,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'AKurilin/matchit.vim'
+Bundle 'bling/vim-airline'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "
 " vim-scripts repos
@@ -70,7 +72,11 @@ set tabstop=2
 set expandtab                   " Make tabs into spaces (set by tabstop)
 set shiftwidth=2                " Set the default shift width for indents 
 set smarttab
+
+" enable auto-indent
+set smartindent
 set autoindent
+filetype indent on
 
 set backspace=indent,eol,start  " Makes backspace key more powerful.
 set showmode                    " Show current mode.
@@ -92,6 +98,12 @@ set hlsearch                    " Highlight found searches
 "
 
 "Set filetypes
-au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru}     set ft=ruby
-au BufRead,BufNewFile {*.md,*.mkd,*.markdown}                         set ft=markdown
-au BufNewFile,BufRead *.coffee                                        set filetype=coffee
+au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru,Guardfile,*.god}     set ft=ruby
+au BufRead,BufNewFile {*.md,*.mkd,*.markdown}                                         set ft=markdown
+au BufNewFile,BufRead {*.coffee,*.coffee.erb}                                         set filetype=coffee
+au BufNewFile,BufRead {*.eco,*.eco.erb}                                               set filetype=mason
+au BufNewFile,BufRead *.js.erb                                                        set filetype=javascript
+
+
+" NERDTree Settings
+let NERDTreeIgnore=['\.DS_Store$']    " Hide unuseful files
