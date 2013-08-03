@@ -53,7 +53,7 @@ colorscheme Tomorrow-Night      " set color theme
 let NERDTreeShowHidden=1 " let Nerdtree show hidden files
 
 if has("gui_macvim")
-  set guifont=Monaco:h16
+  set guifont=Monaco:h14
   set guioptions-=L " Disable Scrollbar in NERDtree with MacVim
 endif
 

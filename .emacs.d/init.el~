@@ -1,0 +1,49 @@
+;; Set default font
+(set-face-attribute 'default nil :font "Monaco-14")
+
+;; Load plugins
+(add-to-list 'load-path "~/.emacs.d/plugins") 
+
+;; Load themes
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-tomorrow-night)
+
+;; Set no line wrap
+(setq-default truncate-lines 1)
+
+;; Remove toolbar
+(tool-bar-mode -1)
+
+
+;; Settings for Ruby on Rails
+(setq el-get-sources
+      '((:name ruby-mode 
+               :type elpa
+               :load "ruby-mode.el"
+               :after (lambda () (ruby-mode-hook)))
+        (:name inf-ruby  :type elpa)
+        (:name ruby-compilation :type elpa)
+        (:name css-mode 
+               :type elpa 
+               :after (lambda () (css-mode-hook)))
+        (:name textmate
+               :type git
+               :url "git://github.com/defunkt/textmate.el"
+               :load "textmate.el")
+        (:name rvm
+               :type git
+               :url "http://github.com/djwhitt/rvm.el.git"
+               :load "rvm.el"
+               :compile ("rvm.el")
+               :after (lambda() (rvm-use-default)))
+        (:name rhtml
+               :type git
+               :url "https://github.com/eschulte/rhtml.git"
+               :features rhtml-mode
+               :after (lambda () (rhtml-mode-hook)))
+        (:name yaml-mode 
+               :type git
+               :url "http://github.com/yoshiki/yaml-mode.git"
+               :features yaml-mode
+               :after (lambda () (yaml-mode-hook)))))
