@@ -12,9 +12,8 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 " original repos on github
-Bundle 'Lokaltog/vim-easymotion'
+Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-rails.git'
-Bundle 'desert-warm-256'
 Bundle 'scrooloose/nerdtree'
 Bundle 'larryzhao/my-vim-colors'
 Bundle 'mileszs/ack.vim'
@@ -25,7 +24,6 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'AKurilin/matchit.vim'
 Bundle 'bling/vim-airline'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "
 " vim-scripts repos
 "Bundle 'L9'
@@ -70,7 +68,7 @@ set encoding=utf-8              " Set default encoding to UTF-8
 " set tabs & indent
 set tabstop=2
 set expandtab                   " Make tabs into spaces (set by tabstop)
-set shiftwidth=2                " Set the default shift width for indents 
+set shiftwidth=2                " Set the default shift width for indents
 set smarttab
 
 " enable auto-indent
