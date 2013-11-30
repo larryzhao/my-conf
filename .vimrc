@@ -24,6 +24,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'AKurilin/matchit.vim'
 Bundle 'bling/vim-airline'
+Bundle 'groenewege/vim-less'
+Bundle 'nono/vim-handlebars'
 "
 " vim-scripts repos
 "Bundle 'L9'
@@ -83,6 +85,11 @@ set splitright                  " Split vertical windows right to the current wi
 set splitbelow                  " Split horizontal windows below to the current windows
 set hlsearch                    " Highlight found searches
 
+
+" set delimiter style
+" set list listchars=tab:»·,trail:·
+" set list listchars=tab:·,trail:·
+
 "set number                     " Show line numbers
 "set showcmd                    " Show me what I'm typing
 "set autowrite                  " Automatically save before :next, :make etc.
@@ -101,7 +108,9 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru,Guardfile,*.god
 au BufRead,BufNewFile {*.md,*.mkd,*.markdown}                                         set ft=markdown
 au BufNewFile,BufRead {*.coffee,*.coffee.erb}                                         set filetype=coffee
 au BufNewFile,BufRead {*.eco,*.eco.erb}                                               set filetype=mason
+au BufNewFile,BufRead {*.less,*.less.erb}                                             set filetype=less
 au BufNewFile,BufRead *.js.erb                                                        set filetype=javascript
+au BufNewFile,BufRead {*.handlebars,*.hbs}                                            set filetype=handlebars
 
 
 " NERDTree Settings
