@@ -26,6 +26,7 @@ Bundle 'AKurilin/matchit.vim'
 Bundle 'bling/vim-airline'
 Bundle 'groenewege/vim-less'
 Bundle 'nono/vim-handlebars'
+Bundle 'junegunn/goyo.vim'
 "
 " vim-scripts repos
 "Bundle 'L9'
@@ -110,6 +111,7 @@ au BufNewFile,BufRead {*.coffee,*.coffee.erb}                                   
 au BufNewFile,BufRead {*.eco,*.eco.erb}                                               set filetype=mason
 au BufNewFile,BufRead {*.less,*.less.erb}                                             set filetype=less
 au BufNewFile,BufRead *.js.erb                                                        set filetype=javascript
+au BufNewFile,BufRead *.raml                                                          set filetype=yaml
 au BufNewFile,BufRead {*.handlebars,*.hbs}                                            set filetype=handlebars
 
 
