@@ -12,7 +12,6 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 " original repos on github
-Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-rails.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'larryzhao/my-vim-colors'
@@ -27,6 +26,7 @@ Bundle 'bling/vim-airline'
 Bundle 'groenewege/vim-less'
 Bundle 'nono/vim-handlebars'
 Bundle 'junegunn/goyo.vim'
+Bundle 'tacahiroy/ctrlp-funky'
 "
 " vim-scripts repos
 "Bundle 'L9'
@@ -54,6 +54,7 @@ colorscheme Tomorrow-Night      " set color theme
 let NERDTreeShowHidden=1 " let Nerdtree show hidden files
 
 if has("gui_macvim")
+  " set guifont=Anonymous\ Pro:h16
   set guifont=Anonymous\ Pro:h16
   set guioptions-=L               " Disable Scrollbar in NERDtree with MacVim
   set linespace=2                 " set the line height
@@ -101,8 +102,6 @@ set hlsearch                    " Highlight found searches
 "set ignorecase                  " Search case insensitive...
 "set smartcase                   " ... but not when search pattern contains upper case characters
 "set switchbuf=usetab,newtab     " open new buffers always in new tabs
-"
-"
 
 "Set filetypes
 au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru,Guardfile,*.god}     set ft=ruby
@@ -117,3 +116,18 @@ au BufNewFile,BufRead {*.handlebars,*.hbs}                                      
 
 " NERDTree Settings
 let NERDTreeIgnore=['\.DS_Store$']    " Hide unuseful files
+
+
+" Config Goyo
+let g:goyo_width=80
+let g:goyo_margin_top=4
+let g:goyo_margin_bottom=4
+
+
+" Config ctrl-p
+let g:ctrlp_extensions = ['funky']
+
+" ctrl-p funky
+nnoremap <Leader>f :CtrlPFunky<Cr>
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
